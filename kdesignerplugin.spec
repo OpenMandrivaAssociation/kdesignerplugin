@@ -2,9 +2,9 @@
 %define debug_package %{nil}
 
 Name: kdesignerplugin
-Version: 4.99.0
-Release: 3
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Version: 5.0.0
+Release: 1
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 URL: http://kde.org/
 License: GPL
