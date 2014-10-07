@@ -12,6 +12,7 @@ Group: Development/KDE and Qt
 BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
+BuildRequires: qt5-designer
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(ECM)
