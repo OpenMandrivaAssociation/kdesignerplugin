@@ -1,10 +1,11 @@
 %define major 5
 %define debug_package %{nil}
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdesignerplugin
-Version: 5.3.0
+Version: 5.4.0
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 URL: http://kde.org/
 License: GPL
@@ -59,5 +60,10 @@ done
 %{_bindir}/kgendesignerplugin
 %{_libdir}/plugins/designer
 %{_datadir}/kf5/widgets
-%{_mandir}/man1/*
 %{_libdir}/cmake/KF5DesignerPlugin
+%{_mandir}/man1/*
+%lang(de) %{_mandir}/de/man1/*
+%lang(nl) %{_mandir}/nl/man1/*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/*
+%lang(sv) %{_mandir}/sv/man1/*
+%lang(uk) %{_mandir}/uk/man1/*
