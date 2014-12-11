@@ -40,13 +40,14 @@ Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 
 %prep
 %setup -q
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+DESTDIR="%{buildroot}" ninja -C build install
 
 L="`pwd`/%{name}.lang"
 cd %{buildroot}
@@ -58,7 +59,7 @@ done
 
 %files -f %{name}.lang
 %{_bindir}/kgendesignerplugin
-%{_libdir}/plugins/designer
+%{_libdir}/qt5/plugins/designer/*
 %{_datadir}/kf5/widgets
 %{_libdir}/cmake/KF5DesignerPlugin
 %{_mandir}/man1/*
