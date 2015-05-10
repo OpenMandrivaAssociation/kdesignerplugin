@@ -58,6 +58,7 @@ done
 %{_datadir}/kf5/widgets
 %{_libdir}/cmake/KF5DesignerPlugin
 %{_mandir}/man1/*
+%lang(ca) %{_mandir}/ca/man1/*
 %lang(de) %{_mandir}/de/man1/*
 %lang(nl) %{_mandir}/nl/man1/*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/*
