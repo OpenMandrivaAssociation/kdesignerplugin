@@ -3,8 +3,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdesignerplugin
-Version: 5.12.0
-Release: 2
+Version: 5.13.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 URL: http://kde.org/
