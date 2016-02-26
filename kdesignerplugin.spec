@@ -29,7 +29,7 @@ BuildRequires: cmake(KF5TextWidgets)
 BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Sonnet)
-BuildRequires: cmake(KF5WebKit)
+BuildRequires: cmake(KF5WebKit) >= %{version}
 
 %description
 Integration of KDE Frameworks 5 widgets in Qt Designer/Creator.
