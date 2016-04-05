@@ -1,6 +1,8 @@
 %define major 5
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+# lto segfaults here
+%define	_disable_lto %{nil}
 
 Name: kdesignerplugin
 Version:	5.20.0
