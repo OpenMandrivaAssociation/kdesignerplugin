@@ -49,9 +49,9 @@ Integration of KDE Frameworks 5 widgets in Qt Designer/Creator.
 L="`pwd`/%{name}.lang"
 cd %{buildroot}
 for i in .%{_datadir}/locale/*/LC_MESSAGES/*.qm; do
-	LNG=`echo $i |cut -d/ -f5`
-	echo -n "%lang($LNG) " >>$L
-	echo $i |cut -b2- >>$L
+    LNG=`echo $i |cut -d/ -f5`
+    echo -n "%lang($LNG) " >>$L
+    echo $i |cut -b2- >>$L
 done
 
 %files -f %{name}.lang
@@ -62,6 +62,7 @@ done
 %{_mandir}/man1/*
 %lang(ca) %{_mandir}/ca/man1/*
 %lang(de) %{_mandir}/de/man1/*
+%lang(it) %{_mandir}/it/man1/*
 %lang(nl) %{_mandir}/nl/man1/*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/*
 %lang(sv) %{_mandir}/sv/man1/*
