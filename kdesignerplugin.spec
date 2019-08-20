@@ -1,12 +1,10 @@
 %define major 5
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-# lto segfaults here
-%define	_disable_lto %{nil}
 
 Name: kdesignerplugin
 Version:	5.61.0
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 URL: http://kde.org/
@@ -46,10 +44,10 @@ Integration of KDE Frameworks 5 widgets in Qt Designer/Creator.
 %install
 %ninja_install -C build
 
-L="`pwd`/%{name}.lang"
+L="$(pwd)/%{name}.lang"
 cd %{buildroot}
 for i in .%{_datadir}/locale/*/LC_MESSAGES/*.qm; do
-    LNG=`echo $i |cut -d/ -f5`
+    LNG=$(echo $i |cut -d/ -f5)
     echo -n "%lang($LNG) " >>$L
     echo $i |cut -b2- >>$L
 done
