@@ -3,9 +3,9 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdesignerplugin
-Version:	5.61.0
-Release:	2
-Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+Version:	5.62.0
+Release:	1
+Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 URL: http://kde.org/
 License: GPL
@@ -54,8 +54,6 @@ done
 
 %files -f %{name}.lang
 %{_bindir}/kgendesignerplugin
-%{_libdir}/qt5/plugins/designer/*
-%{_datadir}/kf5/widgets
 %{_libdir}/cmake/KF5DesignerPlugin
 %{_mandir}/man1/*
 %lang(ca) %{_mandir}/ca/man1/*
