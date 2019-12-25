@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdesignerplugin
-Version:	5.64.0
+Version:	5.65.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
@@ -30,6 +30,8 @@ BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Sonnet)
 BuildRequires: cmake(KF5WebKit) >= %{version}
+# cmake files act up when running into obsolete-ish Qt5Declarative
+BuildConflicts:	pkgconfig(Qt5Declarative)
 
 %description
 Integration of KDE Frameworks 5 widgets in Qt Designer/Creator.
