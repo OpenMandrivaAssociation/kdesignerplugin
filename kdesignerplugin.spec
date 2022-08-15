@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdesignerplugin
-Version:	5.96.0
+Version:	5.97.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
@@ -58,6 +58,7 @@ done
 %{_libdir}/cmake/KF5DesignerPlugin
 %{_mandir}/man1/*
 %lang(ca) %{_mandir}/ca/man1/*
+%lang(ca@valencia) %{_mandir}/ca@valencia/man1/*
 %lang(de) %{_mandir}/de/man1/*
 %lang(es) %{_mandir}/es/man1/*
 %lang(it) %{_mandir}/it/man1/*
