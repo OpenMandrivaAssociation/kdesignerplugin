@@ -2,8 +2,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdesignerplugin
-Version:	5.99.0
-Release:	2
+Version:	5.100.0
+Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: Integration of KDE Frameworks 5 widgets in Qt Designer/Creator
 URL: http://kde.org/
@@ -45,25 +45,9 @@ Integration of KDE Frameworks 5 widgets in Qt Designer/Creator.
 %install
 %ninja_install -C build
 
-L="$(pwd)/%{name}.lang"
-cd %{buildroot}
-for i in .%{_datadir}/locale/*/LC_MESSAGES/*.qm; do
-    LNG=$(echo $i |cut -d/ -f5)
-    echo -n "%lang($LNG) " >>$L
-    echo $i |cut -b2- >>$L
-done
+%find_lang %{name} --with-qt --with-man --all-name
 
 %files -f %{name}.lang
 %{_bindir}/kgendesignerplugin
 %{_libdir}/cmake/KF5DesignerPlugin
 %{_mandir}/man1/*
-%lang(ca) %{_mandir}/ca/man1/*
-%lang(ca@valencia) %{_mandir}/ca@valencia/man1/*
-%lang(de) %{_mandir}/de/man1/*
-%lang(es) %{_mandir}/es/man1/*
-%lang(it) %{_mandir}/it/man1/*
-%lang(nl) %{_mandir}/nl/man1/*
-%lang(pt) %{_mandir}/pt/man1/*
-%lang(pt_BR) %{_mandir}/pt_BR/man1/*
-%lang(sv) %{_mandir}/sv/man1/*
-%lang(uk) %{_mandir}/uk/man1/*
